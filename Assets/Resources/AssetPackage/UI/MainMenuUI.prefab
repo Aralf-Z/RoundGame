@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 7447780904643943503}
-  key: main_settings
+  key: main_options
 --- !u!1 &2257418395385610288
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ GameObject:
   - component: {fileID: 6799006611244884949}
   - component: {fileID: 621349833475387605}
   m_Layer: 0
-  m_Name: Setting
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   animRoot: {fileID: 0}
   hideCpts: []
   startBtn: {fileID: 5730727541874451486}
-  settingBtn: {fileID: 621349833475387605}
+  optionsBtn: {fileID: 621349833475387605}
   exitBtn: {fileID: 8785232261729473949}
 --- !u!1 &5927340270939791964
 GameObject:

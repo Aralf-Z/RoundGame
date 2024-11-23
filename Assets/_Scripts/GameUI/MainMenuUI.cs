@@ -1,50 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using ZToolKit;
 
-public class MainMenuUI : UIScreen
+namespace RoundGame.UI
 {
-    [Header("MainMenu")]
-    public Button startBtn;
-    public Button settingBtn;
-    public Button exitBtn;
-    
-    protected override void OnInit()
+    public class MainMenuUI : UIScreen
     {
-        startBtn.onClick.AddListener(OnClickStartBtn);
-        settingBtn.onClick.AddListener(OnClickSettingBtn);
-        exitBtn.onClick.AddListener(OnClickExitBtn);
-    }
+        [Header("MainMenu")] public Button startBtn;
+        public Button optionsBtn;
+        public Button exitBtn;
 
-    protected override void OnOpen(object data)
-    {
-        AudTool.PlayMusic(CfgTool.Audio.MainMenuBgm);
-    }
+        protected override void OnInit()
+        {
+            startBtn.onClick.AddListener(OnClickStartBtn);
+            optionsBtn.onClick.AddListener(OnClickSettingBtn);
+            exitBtn.onClick.AddListener(OnClickExitBtn);
+        }
 
-    protected override void OnHide()
-    {
-       
-    }
-    
-    private void OnClickStartBtn()
-    {
-        HideSelf();
-        UITool.OpenUI<GameHudUI>(UIPanel.Normal);
-    }
+        protected override void OnOpen(object data)
+        {
+            AudTool.PlayMusic(CfgTool.Audio.MainMenuBgm);
+        }
 
-    private void OnClickSettingBtn()
-    {
-        UITool.OpenUI<SettingUI>(UIPanel.Tip);
-    }
-    
-    private void OnClickExitBtn()
-    {
+        protected override void OnHide()
+        {
+
+        }
+
+        private void OnClickStartBtn()
+        {
+            HideSelf();
+            UITool.OpenUI<GameHudUI>(UIPanel.Normal);
+            SceneManager.LoadScene("_Scenes/BattleField");
+        }
+
+        private void OnClickSettingBtn()
+        {
+            UITool.OpenUI<OptionsUI>(UIPanel.Tip);
+        }
+
+        private void OnClickExitBtn()
+        {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
+        }
     }
 }

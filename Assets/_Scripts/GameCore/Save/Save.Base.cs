@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using ZToolKit;
 
-public partial class Save : SaveBase
+namespace RoundGame.Logic
 {
-    
+    public partial class Save : SaveBase
+    {
+
+    }
 }

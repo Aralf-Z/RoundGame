@@ -4,31 +4,33 @@ using UnityEngine;
 using UnityEngine.UI;
 using ZToolKit;
 
-public class GameHudUI: UIScreen
+namespace RoundGame.UI
 {
-    [Header("GameHudUI")] 
-    public Button settingBtn;
-    public Button helpBtn;
-    public Button backMainBtn;
-
-    protected override void OnInit()
+    public class GameHudUI : UIScreen
     {
-        settingBtn.onClick.AddListener(() => UITool.OpenUI<SettingUI>(UIPanel.Tip));
-        helpBtn.onClick.AddListener(() => UITool.OpenUI<HelpUI>(UIPanel.Tip));
-        backMainBtn.onClick.AddListener(() =>
+        [Header("GameHudUI")] public Button settingBtn;
+        public Button helpBtn;
+        public Button backMainBtn;
+
+        protected override void OnInit()
         {
-            HideSelf();
-            UITool.OpenUI<MainMenuUI>(UIPanel.Normal);
-        });
-    }
+            settingBtn.onClick.AddListener(() => UITool.OpenUI<OptionsUI>(UIPanel.Tip));
+            helpBtn.onClick.AddListener(() => UITool.OpenUI<HelpUI>(UIPanel.Tip));
+            backMainBtn.onClick.AddListener(() =>
+            {
+                HideSelf();
+                UITool.OpenUI<MainMenuUI>(UIPanel.Normal);
+            });
+        }
 
-    protected override void OnOpen(object data)
-    {
-        AudTool.PlayMusic(CfgTool.Audio.GameBgm);
-    }
+        protected override void OnOpen(object data)
+        {
+            AudTool.PlayMusic(CfgTool.Audio.GameBgm);
+        }
 
-    protected override void OnHide()
-    {
-        
+        protected override void OnHide()
+        {
+
+        }
     }
 }

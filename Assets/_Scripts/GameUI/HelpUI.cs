@@ -4,23 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using ZToolKit;
 
-public class HelpUI : UIScreen
+namespace RoundGame.UI
 {
-    [Header("HelpUI")] 
-    public Button exitBtn;
-    
-    protected override void OnInit()
+    public class HelpUI : UIScreen
     {
-        exitBtn.onClick.AddListener(HideSelf);
-    }
+        [Header("HelpUI")] public Button exitBtn;
 
-    protected override void OnOpen(object data)
-    {
-       
-    }
+        protected override void OnInit()
+        {
+            exitBtn.onClick.AddListener(HideSelf);
+        }
 
-    protected override void OnHide()
-    {
-       
+        protected override void OnOpen(object data)
+        {
+
+        }
+
+        protected override void OnHide()
+        {
+
+        }
     }
 }

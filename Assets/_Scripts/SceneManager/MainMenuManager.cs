@@ -2,28 +2,32 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using QFramework;
+using RoundGame.UI;
 using UnityEngine;
 using ZToolKit;
 
-public class MainMenuManager : MonoBehaviour
-,IController
+namespace RoundGame.Logic
 {
-    private void Start()
+    public class MainMenuManager : MonoBehaviour
+        , IController
     {
-        UITool.OpenUI<MainMenuUI>(UIPanel.Normal);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.BackQuote))
+        private void Start()
         {
-            UITool.OpenUI<ConsoleUI>(UIPanel.Tip);
+            UITool.OpenUI<MainMenuUI>(UIPanel.Normal);
         }
-    }
 
-    public IArchitecture GetArchitecture()
-    {
-        return GameCoreMgr.Interface;
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.BackQuote))
+            {
+                UITool.OpenUI<ConsoleUI>(UIPanel.Tip);
+            }
+        }
+
+        public IArchitecture GetArchitecture()
+        {
+            return GameCoreMgr.Interface;
+        }
     }
 }
  

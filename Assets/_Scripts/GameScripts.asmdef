@@ -1,0 +1,22 @@
+{
+    "name": "GameScripts",
+    "rootNamespace": "RoundGame",
+    "references": [
+        "UnityCLI",
+        "UniTask",
+        "QFramework",
+        "ZToolKit",
+        "TableConfig"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "DOTween.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

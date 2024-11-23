@@ -4,22 +4,25 @@ using QFramework;
 using RedSaw.CommandLineInterface;
 using UnityEngine;
 
-public static class DefaultCmd
+namespace RoundGame.Logic
 {
-    private class ConsoleController:
-        IController
+    public static class DefaultCmd
     {
-        public IArchitecture GetArchitecture()
+        private class ConsoleController :
+            IController
         {
-            return GameCoreMgr.Interface;
+            public IArchitecture GetArchitecture()
+            {
+                return GameCoreMgr.Interface;
+            }
         }
-    }
 
-    private static ConsoleController cc = new ConsoleController();
-    
-    [Command(desc: "打印")]
-    private static void printf(string str)
-    {
-        Debug.Log(str);
+        private static ConsoleController cc = new ConsoleController();
+
+        [Command(desc: "打印")]
+        private static void printf(string str)
+        {
+            Debug.Log(str);
+        }
     }
 }

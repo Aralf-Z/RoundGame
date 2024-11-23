@@ -4,75 +4,78 @@ using QFramework;
 using UnityEngine;
 using ZToolKit;
 
-
-public class GameCoreMgr :
-    Architecture<GameCoreMgr>
+namespace RoundGame.Logic
 {
-    protected override void Init()
+    public class GameCoreMgr :
+        Architecture<GameCoreMgr>
     {
-        var types = Assembly.GetExecutingAssembly().GetTypes();
-        foreach (var type in types)
+        protected override void Init()
         {
-            if (Attribute.GetCustomAttribute(type, typeof(AutoRegisterAttribute)) is AutoRegisterAttribute autoRegister
-                && autoRegister.Archi == typeof(GameCoreMgr))
+            var types = Assembly.GetExecutingAssembly().GetTypes();
+            foreach (var type in types)
             {
-                if (typeof(ISystem).IsAssignableFrom(type))
+                if (Attribute.GetCustomAttribute(type, typeof(AutoRegisterAttribute)) is AutoRegisterAttribute
+                        autoRegister
+                    && autoRegister.Archi == typeof(GameCoreMgr))
                 {
-                    RegisterSystem((ISystem) Activator.CreateInstance(type), type);
-                    LogTool.Info("QfArch", $"AutoRegister System: {type.Name}.");
-                }
-                else if (typeof(IModel).IsAssignableFrom(type))
-                {
-                    RegisterModel((IModel) Activator.CreateInstance(type), type);
-                    LogTool.Info("QfArch", $"AutoRegister Model: {type.Name}.");
-                }
-                else if (typeof(IUtility).IsAssignableFrom(type))
-                {
-                    RegisterUtility((IUtility) Activator.CreateInstance(type), type);
-                    LogTool.Info("QfArch", $"AutoRegister Utility: {type.Name}.");
-                }
-                else
-                {
-                    LogTool.Error("QfArch", $"Wrong AutoRegister: {type.Name}.");
+                    if (typeof(ISystem).IsAssignableFrom(type))
+                    {
+                        RegisterSystem((ISystem)Activator.CreateInstance(type), type);
+                        LogTool.Info("QfArch", $"AutoRegister System: {type.Name}.");
+                    }
+                    else if (typeof(IModel).IsAssignableFrom(type))
+                    {
+                        RegisterModel((IModel)Activator.CreateInstance(type), type);
+                        LogTool.Info("QfArch", $"AutoRegister Model: {type.Name}.");
+                    }
+                    else if (typeof(IUtility).IsAssignableFrom(type))
+                    {
+                        RegisterUtility((IUtility)Activator.CreateInstance(type), type);
+                        LogTool.Info("QfArch", $"AutoRegister Utility: {type.Name}.");
+                    }
+                    else
+                    {
+                        LogTool.Error("QfArch", $"Wrong AutoRegister: {type.Name}.");
+                    }
                 }
             }
         }
-    }
 
-    public override TSystem GetSystem<TSystem>()
-    {
-        var sys = base.GetSystem<TSystem>();
-        if (sys is null)
+        public override TSystem GetSystem<TSystem>()
         {
-            LogTool.Error("QfArch", $"{typeof(TSystem)} is not Registered in GameCoreMgr");
+            var sys = base.GetSystem<TSystem>();
+            if (sys is null)
+            {
+                LogTool.Error("QfArch", $"{typeof(TSystem)} is not Registered in GameCoreMgr");
+            }
+
+            return sys;
         }
 
-        return sys;
-    }
-
-    public override TModel GetModel<TModel>()
-    {
-        var mdl = base.GetModel<TModel>();
-        if (mdl is null)
+        public override TModel GetModel<TModel>()
         {
-            LogTool.Error("QfArch", $"{typeof(TModel)} is not Registered in GameCoreMgr");
+            var mdl = base.GetModel<TModel>();
+            if (mdl is null)
+            {
+                LogTool.Error("QfArch", $"{typeof(TModel)} is not Registered in GameCoreMgr");
+            }
+
+            return mdl;
         }
 
-        return mdl;
-    }
-    
-    public override TUtility GetUtility<TUtility>()
-    {
-        var util = base.GetUtility<TUtility>();
-        if (util is null)
+        public override TUtility GetUtility<TUtility>()
         {
-            LogTool.Error("QfArch", $"{typeof(TUtility)} is not Registered in GameCoreMgr");
+            var util = base.GetUtility<TUtility>();
+            if (util is null)
+            {
+                LogTool.Error("QfArch", $"{typeof(TUtility)} is not Registered in GameCoreMgr");
+            }
+
+            return util;
         }
 
-        return util;
-    }
-
-    protected override void OnDeinit()
-    {
+        protected override void OnDeinit()
+        {
+        }
     }
 }

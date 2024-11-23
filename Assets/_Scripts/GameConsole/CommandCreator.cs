@@ -5,8 +5,11 @@ using System.Reflection;
 using RedSaw.CommandLineInterface;
 using UnityEngine;
 
-public class CommandCreator:
-    ICommandCreator
+namespace RoundGame.Logic
 {
-    public Type[] GetAssemblyTypes() => Assembly.GetExecutingAssembly().GetTypes();
+    public class CommandCreator :
+        ICommandCreator
+    {
+        public Type[] GetAssemblyTypes() => Assembly.GetExecutingAssembly().GetTypes();
+    }
 }

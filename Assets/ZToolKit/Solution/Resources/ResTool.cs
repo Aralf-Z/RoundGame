@@ -64,6 +64,7 @@ namespace ZToolKit
                         LogTool.ToolError("ResTool", "YooAsset Not Supported Lazy Load");
                     }
                     sCurHandler.LazyInitHandler();
+                    sInited = true;
                     LogTool.ToolInfo("ResTool", "Lazy Load");
                 }
                 catch (Exception e)

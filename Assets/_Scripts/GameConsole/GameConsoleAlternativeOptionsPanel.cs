@@ -3,38 +3,41 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>default implementation of alternative options panel</summary>
-public class GameConsoleAlternativeOptionsPanel : MonoBehaviour
+namespace RoundGame.UI
 {
-    [SerializeField] private Text textPanel;
-
-    List<string> options;
-
-    public int SelectionIndex
+    /// <summary>default implementation of alternative options panel</summary>
+    public class GameConsoleAlternativeOptionsPanel : MonoBehaviour
     {
-        set
+        [SerializeField] private Text textPanel;
+
+        List<string> options;
+
+        public int SelectionIndex
         {
-            textPanel.text = string.Empty;
-            if (options == null || options.Count == 0) return;
-            string output = string.Empty;
-            for (int i = 0; i < options.Count; i++)
+            set
             {
-                if (i == value)
+                textPanel.text = string.Empty;
+                if (options == null || options.Count == 0) return;
+                string output = string.Empty;
+                for (int i = 0; i < options.Count; i++)
                 {
-                    output += $"<color=\"#92e8c0\">{options[i]}</color>\n";
-                    continue;
+                    if (i == value)
+                    {
+                        output += $"<color=\"#92e8c0\">{options[i]}</color>\n";
+                        continue;
+                    }
+
+                    output += options[i] + "\n";
                 }
 
-                output += options[i] + "\n";
+                textPanel.text = output;
             }
-
-            textPanel.text = output;
         }
-    }
 
-    /// <summary>render current alternative options</summary>
-    public void SetOptions(List<string> values)
-    {
-        this.options = values;
+        /// <summary>render current alternative options</summary>
+        public void SetOptions(List<string> values)
+        {
+            this.options = values;
+        }
     }
 }

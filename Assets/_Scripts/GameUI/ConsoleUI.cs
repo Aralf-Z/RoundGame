@@ -6,52 +6,54 @@ using UnityEngine;
 using UnityEngine.UI;
 using ZToolKit;
 
-public class ConsoleUI : UIScreen
+namespace RoundGame.UI
 {
-    [Header("CheatUI")]
-    public ConsoleUI_CheatPanel cheatPanel;
-
-    public Button cheatBtn;
-    public Image cheatBtnImg;
-
-    public bool isOpenCheatOnInit;
-
-    protected override void OnInit()
+    public class ConsoleUI : UIScreen
     {
-        cheatPanel.SetActiveOnInit(isOpenCheatOnInit);
-        cheatBtnImg.transform.localScale = new Vector3(isOpenCheatOnInit ? 1 : -1, 1, 1);
-        cheatBtn.onClick.AddListener(OnClickCheatBtn);
-    }
+        [Header("CheatUI")] public ConsoleUI_CheatPanel cheatPanel;
 
-    protected override void OnOpen(object data)
-    {
-        
-    }
+        public Button cheatBtn;
+        public Image cheatBtnImg;
 
-    protected override void OnHide()
-    {
-        
-    }
+        public bool isOpenCheatOnInit;
 
-    private void OnClickCheatBtn()
-    {
-        if (cheatPanel.GoActive)
+        protected override void OnInit()
         {
-            cheatBtnImg.transform.localScale = new Vector3(-1,1,1);
-            cheatPanel.Hide();
+            cheatPanel.SetActiveOnInit(isOpenCheatOnInit);
+            cheatBtnImg.transform.localScale = new Vector3(isOpenCheatOnInit ? 1 : -1, 1, 1);
+            cheatBtn.onClick.AddListener(OnClickCheatBtn);
         }
-        else
+
+        protected override void OnOpen(object data)
         {
-            cheatBtnImg.transform.localScale = new Vector3(1,1,1);
-            cheatPanel.Open();
+
         }
-    }
-    
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        protected override void OnHide()
         {
-            HideSelf();
+
+        }
+
+        private void OnClickCheatBtn()
+        {
+            if (cheatPanel.GoActive)
+            {
+                cheatBtnImg.transform.localScale = new Vector3(-1, 1, 1);
+                cheatPanel.Hide();
+            }
+            else
+            {
+                cheatBtnImg.transform.localScale = new Vector3(1, 1, 1);
+                cheatPanel.Open();
+            }
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HideSelf();
+            }
         }
     }
 }

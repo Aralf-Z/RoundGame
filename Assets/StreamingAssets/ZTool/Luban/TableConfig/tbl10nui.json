@@ -40,9 +40,9 @@
     "en": "Load"
   },
   {
-    "l10n_key": "main_settings",
+    "l10n_key": "main_options",
     "cn": "设置",
-    "en": "Settings"
+    "en": "Options"
   },
   {
     "l10n_key": "main_exit",
@@ -50,47 +50,47 @@
     "en": "Exit"
   },
   {
-    "l10n_key": "settings_display",
+    "l10n_key": "options_display",
     "cn": "显示",
     "en": "Display"
   },
   {
-    "l10n_key": "settings_windowed",
+    "l10n_key": "options_windowed",
     "cn": "窗口化",
     "en": "Windowed"
   },
   {
-    "l10n_key": "settings_full_screen",
+    "l10n_key": "options_full_screen",
     "cn": "全屏",
     "en": "Full Screen"
   },
   {
-    "l10n_key": "settings_language",
+    "l10n_key": "options_language",
     "cn": "语言",
     "en": "Language"
   },
   {
-    "l10n_key": "settings_Chinese",
+    "l10n_key": "options_Chinese",
     "cn": "中文",
     "en": "中文"
   },
   {
-    "l10n_key": "settings_English",
+    "l10n_key": "options_English",
     "cn": "English",
     "en": "English"
   },
   {
-    "l10n_key": "settings_sound",
+    "l10n_key": "options_sound",
     "cn": "声音",
     "en": "Sound"
   },
   {
-    "l10n_key": "settings_music_vol",
+    "l10n_key": "options_music_vol",
     "cn": "音乐",
     "en": "Music"
   },
   {
-    "l10n_key": "settings_sfx_vol",
+    "l10n_key": "options_sfx_vol",
     "cn": "音效",
     "en": "Sfx"
   }

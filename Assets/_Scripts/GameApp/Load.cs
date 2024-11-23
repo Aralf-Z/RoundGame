@@ -2,41 +2,43 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using YooAsset;
 using ZToolKit;
 
-public class Load : MonoBehaviour
+namespace RoundGame.App
 {
-    public Text loadingTxt;
-    private float mLoadingTimer;
-
-    private async void Start()
+    public class Load : MonoBehaviour
     {
-        //初始化Toolkit
-        await ToolKit.Init();
+        public Text loadingTxt;
+        private float mLoadingTimer;
 
-        SceneManager.LoadScene("_Scenes/MainMenu");
-    }
+        private async void Start()
+        {
+            //初始化Toolkit
+            await ToolKit.Init();
 
-    private void Update()
-    {
-        mLoadingTimer += Time.deltaTime;
-        
-        if (mLoadingTimer < .3f)
-        {
-            loadingTxt.text = "Loading.";
+            SceneManager.LoadScene("_Scenes/MainMenu");
         }
-        else if (mLoadingTimer < .6f)
+
+        private void Update()
         {
-            loadingTxt.text = "Loading..";
-        }
-        else if (mLoadingTimer < .9f)
-        {
-            loadingTxt.text = "Loading...";
-        }
-        else
-        {
-            mLoadingTimer = 0;
+            mLoadingTimer += Time.deltaTime;
+
+            if (mLoadingTimer < .3f)
+            {
+                loadingTxt.text = "Loading.";
+            }
+            else if (mLoadingTimer < .6f)
+            {
+                loadingTxt.text = "Loading..";
+            }
+            else if (mLoadingTimer < .9f)
+            {
+                loadingTxt.text = "Loading...";
+            }
+            else
+            {
+                mLoadingTimer = 0;
+            }
         }
     }
 }
