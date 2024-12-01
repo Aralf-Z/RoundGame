@@ -17,12 +17,20 @@ public partial class Tables
     public TbAudio TbAudio {get; }
     public TbL10nUI TbL10nUI {get; }
     public TbL10nGame TbL10nGame {get; }
+    public TbCyclopedia TbCyclopedia {get; }
+    public TbCharacter TbCharacter {get; }
+    public TbBestiary TbBestiary {get; }
+    public TbEquipment TbEquipment {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
         TbAudio = new TbAudio(loader("tbaudio"));
         TbL10nUI = new TbL10nUI(loader("tbl10nui"));
         TbL10nGame = new TbL10nGame(loader("tbl10ngame"));
+        TbCyclopedia = new TbCyclopedia(loader("tbcyclopedia"));
+        TbCharacter = new TbCharacter(loader("tbcharacter"));
+        TbBestiary = new TbBestiary(loader("tbbestiary"));
+        TbEquipment = new TbEquipment(loader("tbequipment"));
         ResolveRef();
     }
     
@@ -31,6 +39,10 @@ public partial class Tables
         TbAudio.ResolveRef(this);
         TbL10nUI.ResolveRef(this);
         TbL10nGame.ResolveRef(this);
+        TbCyclopedia.ResolveRef(this);
+        TbCharacter.ResolveRef(this);
+        TbBestiary.ResolveRef(this);
+        TbEquipment.ResolveRef(this);
     }
 }
 

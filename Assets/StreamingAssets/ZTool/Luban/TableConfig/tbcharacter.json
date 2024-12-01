@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1010020001,
+    "name_key": "cha_name_1",
+    "desc_key": "cha_desc_1"
+  },
+  {
+    "id": 1010020002,
+    "name_key": "cha_name_2",
+    "desc_key": "cha_desc_2"
+  },
+  {
+    "id": 1010020003,
+    "name_key": "cha_name_3",
+    "desc_key": "cha_desc_3"
+  },
+  {
+    "id": 1010020004,
+    "name_key": "cha_name_4",
+    "desc_key": "cha_desc_4"
+  },
+  {
+    "id": 1010020005,
+    "name_key": "cha_name_5",
+    "desc_key": "cha_desc_5"
+  }
+]

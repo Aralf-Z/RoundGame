@@ -1,7 +1,57 @@
 [
   {
-    "l10n_key": "game_name",
-    "cn": "有趣的游戏",
-    "en": "Funny Game"
+    "l10n_key": "game_title",
+    "cn": "德米斯尔冒险传",
+    "en": "Adventure Of Theardemi"
+  },
+  {
+    "l10n_key": "cha_name_1",
+    "cn": "甘道夫",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_name_2",
+    "cn": "阿拉贡",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_name_3",
+    "cn": "莱格拉斯",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_name_4",
+    "cn": "金雳",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_name_5",
+    "cn": "格德",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_desc_1",
+    "cn": "灰袍巫师，伟大的迈雅",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_desc_2",
+    "cn": "伊熙尔杜嫡孙，白树之君",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_desc_3",
+    "cn": "瑟兰迪尔之子，林地王国王子",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_desc_4",
+    "cn": "葛罗音之子，矮人王族",
+    "en": ""
+  },
+  {
+    "l10n_key": "cha_desc_5",
+    "cn": "来自弓忒岛的雀鹰，一名伟大的法师",
+    "en": ""
   }
 ]

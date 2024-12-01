@@ -26,6 +26,7 @@ public sealed partial class ChaCoreAttributes : Luban.BeanBase
         { if(!_buf["Faith"].IsNumber) { throw new SerializationException(); }  Faith = _buf["Faith"]; }
         { if(!_buf["Constitution"].IsNumber) { throw new SerializationException(); }  Constitution = _buf["Constitution"]; }
         { if(!_buf["Wisdom"].IsNumber) { throw new SerializationException(); }  Wisdom = _buf["Wisdom"]; }
+        { if(!_buf["Strength"].IsNumber) { throw new SerializationException(); }  Strength = _buf["Strength"]; }
     }
 
     public static ChaCoreAttributes DeserializeChaCoreAttributes(JSONNode _buf)
@@ -57,6 +58,10 @@ public sealed partial class ChaCoreAttributes : Luban.BeanBase
     /// 感知
     /// </summary>
     public readonly int Wisdom;
+    /// <summary>
+    /// 力气
+    /// </summary>
+    public readonly int Strength;
    
     public const int __ID__ = 235652594;
     public override int GetTypeId() => __ID__;
@@ -74,6 +79,7 @@ public sealed partial class ChaCoreAttributes : Luban.BeanBase
         + "Faith:" + Faith + ","
         + "Constitution:" + Constitution + ","
         + "Wisdom:" + Wisdom + ","
+        + "Strength:" + Strength + ","
         + "}";
     }
 }

@@ -179,7 +179,7 @@ namespace ZToolKit.Editor
 
                 if (GUILayout.Button("选择本地配置表", EditorStyles.miniButton, GUILayout.Width(100)))
                 {
-                    var path = EditorUtility.OpenFilePanel("路径", mLubanConfigPath, "xlsx");
+                    var path = EditorUtility.OpenFilePanel("路径", mLubanConfigPath, "");
 
                     if (path != string.Empty)
                     {
@@ -303,13 +303,14 @@ namespace ZToolKit.Editor
             var definesPath = Path.Combine(confRoot, "Defines");
             var definesFilePath = Path.Combine(confRoot, "Defines/builtin.xml");
             var definesDefaultPath = Path.Combine(mLubanPath, "Defines/builtin.xml");
-            
+            var isDefaultDefines = string.Equals(Path.GetFullPath(definesFilePath).TrimEnd(Path.DirectorySeparatorChar),
+                Path.GetFullPath(definesDefaultPath).TrimEnd(Path.DirectorySeparatorChar)); 
             try
             {
                 File.WriteAllText(schemaFilePath, Schema);
                 EditorUtility.DisplayProgressBar("创建依赖", "luban.conf", .2f);
                 
-                if (definesFilePath != definesDefaultPath)
+                if (!isDefaultDefines)
                 {
                     if (!Directory.Exists(definesPath))
                     {
@@ -366,7 +367,7 @@ namespace ZToolKit.Editor
                         File.Delete(schemaFilePath);
                     }
 
-                    if (definesFilePath != definesDefaultPath)
+                    if (!isDefaultDefines)
                     {
                         if (File.Exists(definesFilePath))
                         {
