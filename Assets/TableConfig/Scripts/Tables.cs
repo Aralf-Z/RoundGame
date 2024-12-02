@@ -15,7 +15,7 @@ namespace cfg
 public partial class Tables
 {
     public TbAudio TbAudio {get; }
-    public TbL10nUI TbL10nUI {get; }
+    public TbL10nUi TbL10nUi {get; }
     public TbL10nGame TbL10nGame {get; }
     public TbCyclopedia TbCyclopedia {get; }
     public TbCharacter TbCharacter {get; }
@@ -25,7 +25,7 @@ public partial class Tables
     public Tables(System.Func<string, JSONNode> loader)
     {
         TbAudio = new TbAudio(loader("tbaudio"));
-        TbL10nUI = new TbL10nUI(loader("tbl10nui"));
+        TbL10nUi = new TbL10nUi(loader("tbl10nui"));
         TbL10nGame = new TbL10nGame(loader("tbl10ngame"));
         TbCyclopedia = new TbCyclopedia(loader("tbcyclopedia"));
         TbCharacter = new TbCharacter(loader("tbcharacter"));
@@ -37,7 +37,7 @@ public partial class Tables
     private void ResolveRef()
     {
         TbAudio.ResolveRef(this);
-        TbL10nUI.ResolveRef(this);
+        TbL10nUi.ResolveRef(this);
         TbL10nGame.ResolveRef(this);
         TbCyclopedia.ResolveRef(this);
         TbCharacter.ResolveRef(this);

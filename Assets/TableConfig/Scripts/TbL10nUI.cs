@@ -13,31 +13,31 @@ using SimpleJSON;
 
 namespace cfg
 {
-public partial class TbL10nUI
+public partial class TbL10nUi
 {
-    private readonly System.Collections.Generic.Dictionary<string, L10nUI> _dataMap;
-    private readonly System.Collections.Generic.List<L10nUI> _dataList;
+    private readonly System.Collections.Generic.Dictionary<string, L10nUi> _dataMap;
+    private readonly System.Collections.Generic.List<L10nUi> _dataList;
     
-    public TbL10nUI(JSONNode _buf)
+    public TbL10nUi(JSONNode _buf)
     {
-        _dataMap = new System.Collections.Generic.Dictionary<string, L10nUI>();
-        _dataList = new System.Collections.Generic.List<L10nUI>();
+        _dataMap = new System.Collections.Generic.Dictionary<string, L10nUi>();
+        _dataList = new System.Collections.Generic.List<L10nUi>();
         
         foreach(JSONNode _ele in _buf.Children)
         {
-            L10nUI _v;
-            { if(!_ele.IsObject) { throw new SerializationException(); }  _v = L10nUI.DeserializeL10nUI(_ele);  }
+            L10nUi _v;
+            { if(!_ele.IsObject) { throw new SerializationException(); }  _v = L10nUi.DeserializeL10nUi(_ele);  }
             _dataList.Add(_v);
             _dataMap.Add(_v.L10nKey, _v);
         }
     }
 
-    public System.Collections.Generic.Dictionary<string, L10nUI> DataMap => _dataMap;
-    public System.Collections.Generic.List<L10nUI> DataList => _dataList;
+    public System.Collections.Generic.Dictionary<string, L10nUi> DataMap => _dataMap;
+    public System.Collections.Generic.List<L10nUi> DataList => _dataList;
 
-    public L10nUI GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
-    public L10nUI Get(string key) => _dataMap[key];
-    public L10nUI this[string key] => _dataMap[key];
+    public L10nUi GetOrDefault(string key) => _dataMap.TryGetValue(key, out var v) ? v : null;
+    public L10nUi Get(string key) => _dataMap[key];
+    public L10nUi this[string key] => _dataMap[key];
 
     public void ResolveRef(Tables tables)
     {

@@ -21,7 +21,7 @@ namespace ZToolKit
             set => Set(value);
         }
         
-        public static TbL10nUI UiL10n => CfgTool.Tables.TbL10nUI;
+        public static TbL10nUi UiL10n => CfgTool.Tables.TbL10nUi;
         public static TbL10nGame GameL10n => CfgTool.Tables.TbL10nGame;
         
         public static event Action Event_OnChangeLanguage;

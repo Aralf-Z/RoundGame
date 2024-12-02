@@ -18,8 +18,8 @@ public sealed partial class Character : Luban.BeanBase
     public Character(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
-        { if(!_buf["name_key"].IsString) { throw new SerializationException(); }  NameKey = _buf["name_key"]; }
-        { if(!_buf["desc_key"].IsString) { throw new SerializationException(); }  DescKey = _buf["desc_key"]; }
+        { if(!_buf["name_loc_key"].IsString) { throw new SerializationException(); }  NameLocKey = _buf["name_loc_key"]; }
+        { if(!_buf["desc_loc_key"].IsString) { throw new SerializationException(); }  DescLocKey = _buf["desc_loc_key"]; }
     }
 
     public static Character DeserializeCharacter(JSONNode _buf)
@@ -34,11 +34,11 @@ public sealed partial class Character : Luban.BeanBase
     /// <summary>
     /// 名称
     /// </summary>
-    public readonly string NameKey;
+    public readonly string NameLocKey;
     /// <summary>
     /// 描述
     /// </summary>
-    public readonly string DescKey;
+    public readonly string DescLocKey;
    
     public const int __ID__ = -726803703;
     public override int GetTypeId() => __ID__;
@@ -51,8 +51,8 @@ public sealed partial class Character : Luban.BeanBase
     {
         return "{ "
         + "id:" + Id + ","
-        + "nameKey:" + NameKey + ","
-        + "descKey:" + DescKey + ","
+        + "nameLocKey:" + NameLocKey + ","
+        + "descLocKey:" + DescLocKey + ","
         + "}";
     }
 }
