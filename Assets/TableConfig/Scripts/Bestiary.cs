@@ -18,7 +18,11 @@ public sealed partial class Bestiary : Luban.BeanBase
     public Bestiary(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
-        { if(!_buf["name"].IsString) { throw new SerializationException(); }  Name = _buf["name"]; }
+        { if(!_buf["name_loc_key"].IsString) { throw new SerializationException(); }  NameLocKey = _buf["name_loc_key"]; }
+        NameLocKey_Ref = null;
+        { if(!_buf["cha_class"].IsNumber) { throw new SerializationException(); }  ChaClass = (ChaClass)_buf["cha_class"].AsInt; }
+        { if(!_buf["core_attri"].IsObject) { throw new SerializationException(); }  CoreAttri = ChaCoreAttributes.DeserializeChaCoreAttributes(_buf["core_attri"]);  }
+        { if(!_buf["res_prefab"].IsString) { throw new SerializationException(); }  ResPrefab = _buf["res_prefab"]; }
     }
 
     public static Bestiary DeserializeBestiary(JSONNode _buf)
@@ -33,20 +37,32 @@ public sealed partial class Bestiary : Luban.BeanBase
     /// <summary>
     /// 名称
     /// </summary>
-    public readonly string Name;
+    public readonly string NameLocKey;
+    public LocGame NameLocKey_Ref;
+    /// <summary>
+    /// 职业
+    /// </summary>
+    public readonly ChaClass ChaClass;
+    public readonly ChaCoreAttributes CoreAttri;
+    public readonly string ResPrefab;
    
     public const int __ID__ = 1907629411;
     public override int GetTypeId() => __ID__;
 
     public  void ResolveRef(Tables tables)
     {
+        NameLocKey_Ref = tables.TbLocGame.GetOrDefault(NameLocKey);
+        CoreAttri?.ResolveRef(tables);
     }
 
     public override string ToString()
     {
         return "{ "
         + "id:" + Id + ","
-        + "name:" + Name + ","
+        + "nameLocKey:" + NameLocKey + ","
+        + "chaClass:" + ChaClass + ","
+        + "coreAttri:" + CoreAttri + ","
+        + "resPrefab:" + ResPrefab + ","
         + "}";
     }
 }

@@ -26,13 +26,7 @@ public sealed partial class Cyclopedia : Luban.BeanBase
         return new Cyclopedia(_buf);
     }
 
-    /// <summary>
-    /// 唯一id
-    /// </summary>
     public readonly int Id;
-    /// <summary>
-    /// 名称
-    /// </summary>
     public readonly string Name;
    
     public const int __ID__ = 1149898647;

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1010020001,
+    "name_loc_key": "par_name_1",
+    "cha_class": 4,
+    "core_attri": {
+      "Might": 9,
+      "Dexterity": 12,
+      "Intellect": 17,
+      "Faith": 12,
+      "Constitution": 12,
+      "Wisdom": 15,
+      "Strength": 8
+    },
+    "res_prefab": "cha_partner_1"
+  },
+  {
+    "id": 1010020002,
+    "name_loc_key": "par_name_2",
+    "cha_class": 3,
+    "core_attri": {
+      "Might": 10,
+      "Dexterity": 10,
+      "Intellect": 14,
+      "Faith": 18,
+      "Constitution": 12,
+      "Wisdom": 10,
+      "Strength": 10
+    },
+    "res_prefab": "cha_partner_2"
+  },
+  {
+    "id": 1010020003,
+    "name_loc_key": "par_name_3",
+    "cha_class": 2,
+    "core_attri": {
+      "Might": 16,
+      "Dexterity": 12,
+      "Intellect": 9,
+      "Faith": 17,
+      "Constitution": 14,
+      "Wisdom": 8,
+      "Strength": 12
+    },
+    "res_prefab": "cha_partner_3"
+  },
+  {
+    "id": 1010020004,
+    "name_loc_key": "par_name_4",
+    "cha_class": 5,
+    "core_attri": {
+      "Might": 10,
+      "Dexterity": 17,
+      "Intellect": 10,
+      "Faith": 12,
+      "Constitution": 12,
+      "Wisdom": 14,
+      "Strength": 10
+    },
+    "res_prefab": "cha_partner_4"
+  },
+  {
+    "id": 1010020005,
+    "name_loc_key": "par_name_5",
+    "cha_class": 1,
+    "core_attri": {
+      "Might": 16,
+      "Dexterity": 11,
+      "Intellect": 8,
+      "Faith": 8,
+      "Constitution": 17,
+      "Wisdom": 8,
+      "Strength": 17
+    },
+    "res_prefab": "cha_partner_5"
+  },
+  {
+    "id": 1010020006,
+    "name_loc_key": "par_name_6",
+    "cha_class": 4,
+    "core_attri": {
+      "Might": 10,
+      "Dexterity": 15,
+      "Intellect": 19,
+      "Faith": 12,
+      "Constitution": 10,
+      "Wisdom": 8,
+      "Strength": 12
+    },
+    "res_prefab": "cha_partner_6"
+  },
+  {
+    "id": 1010020007,
+    "name_loc_key": "par_name_7",
+    "cha_class": 6,
+    "core_attri": {
+      "Might": 12,
+      "Dexterity": 17,
+      "Intellect": 9,
+      "Faith": 12,
+      "Constitution": 12,
+      "Wisdom": 17,
+      "Strength": 8
+    },
+    "res_prefab": "cha_partner_7"
+  },
+  {
+    "id": 1010020008,
+    "name_loc_key": "par_name_8",
+    "cha_class": 7,
+    "core_attri": {
+      "Might": 14,
+      "Dexterity": 10,
+      "Intellect": 14,
+      "Faith": 17,
+      "Constitution": 12,
+      "Wisdom": 10,
+      "Strength": 12
+    },
+    "res_prefab": "cha_partner_8"
+  }
+]

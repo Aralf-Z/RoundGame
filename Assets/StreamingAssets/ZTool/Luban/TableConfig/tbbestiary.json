@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "id": 1010030001,
+    "name_loc_key": "bes_name_1",
+    "cha_class": 1,
+    "core_attri": {
+      "Might": 10,
+      "Dexterity": 12,
+      "Intellect": 22,
+      "Faith": 18,
+      "Constitution": 20,
+      "Wisdom": 14,
+      "Strength": 8
+    },
+    "res_prefab": "cha_bestiary_1"
+  },
+  {
+    "id": 1010030002,
+    "name_loc_key": "bes_name_2",
+    "cha_class": 5,
+    "core_attri": {
+      "Might": 18,
+      "Dexterity": 16,
+      "Intellect": 14,
+      "Faith": 10,
+      "Constitution": 14,
+      "Wisdom": 15,
+      "Strength": 16
+    },
+    "res_prefab": "cha_bestiary_2"
+  },
+  {
+    "id": 1010030003,
+    "name_loc_key": "bes_name_3",
+    "cha_class": 4,
+    "core_attri": {
+      "Might": 12,
+      "Dexterity": 18,
+      "Intellect": 10,
+      "Faith": 18,
+      "Constitution": 12,
+      "Wisdom": 18,
+      "Strength": 10
+    },
+    "res_prefab": "cha_bestiary_3"
+  },
+  {
+    "id": 1010030004,
+    "name_loc_key": "bes_name_4",
+    "cha_class": 7,
+    "core_attri": {
+      "Might": 12,
+      "Dexterity": 14,
+      "Intellect": 14,
+      "Faith": 17,
+      "Constitution": 12,
+      "Wisdom": 12,
+      "Strength": 19
+    },
+    "res_prefab": "cha_bestiary_4"
+  },
+  {
+    "id": 1010030005,
+    "name_loc_key": "bes_name_5",
+    "cha_class": 2,
+    "core_attri": {
+      "Might": 8,
+      "Dexterity": 10,
+      "Intellect": 20,
+      "Faith": 14,
+      "Constitution": 10,
+      "Wisdom": 14,
+      "Strength": 12
+    },
+    "res_prefab": "cha_bestiary_5"
+  },
+  {
+    "id": 1010030006,
+    "name_loc_key": "bes_name_6",
+    "cha_class": 6,
+    "core_attri": {
+      "Might": 12,
+      "Dexterity": 20,
+      "Intellect": 9,
+      "Faith": 12,
+      "Constitution": 14,
+      "Wisdom": 20,
+      "Strength": 14
+    },
+    "res_prefab": "cha_bestiary_6"
+  },
+  {
+    "id": 1010030007,
+    "name_loc_key": "bes_name_7",
+    "cha_class": 4,
+    "core_attri": {
+      "Might": 14,
+      "Dexterity": 12,
+      "Intellect": 17,
+      "Faith": 10,
+      "Constitution": 18,
+      "Wisdom": 12,
+      "Strength": 16
+    },
+    "res_prefab": "cha_bestiary_7"
+  },
+  {
+    "id": 1010030008,
+    "name_loc_key": "bes_name_8",
+    "cha_class": 5,
+    "core_attri": {
+      "Might": 14,
+      "Dexterity": 17,
+      "Intellect": 10,
+      "Faith": 8,
+      "Constitution": 12,
+      "Wisdom": 20,
+      "Strength": 18
+    },
+    "res_prefab": "cha_bestiary_8"
+  }
+]

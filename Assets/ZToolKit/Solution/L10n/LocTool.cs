@@ -13,7 +13,7 @@ namespace ZToolKit
         Chinese,
     }
 
-    public static class L10nTool
+    public static class LocTool
     {
         public static Language Language
         {
@@ -21,14 +21,14 @@ namespace ZToolKit
             set => Set(value);
         }
         
-        public static TbL10nUi UiL10n => CfgTool.Tables.TbL10nUi;
-        public static TbL10nGame GameL10n => CfgTool.Tables.TbL10nGame;
+        public static TbLocUi UiL10n => CfgTool.Tables.TbLocUi;
+        public static TbLocGame GameL10n => CfgTool.Tables.TbLocGame;
         
         public static event Action Event_OnChangeLanguage;
         
         private static Language sLanguage;
 
-        static L10nTool()
+        static LocTool()
         {
             Language = Language.Chinese;
         }
@@ -51,23 +51,23 @@ namespace ZToolKit
                 };
             }
             
-            LogTool.ToolError("L10nTool",$"Invalid Key:{key}, path:{refTransform.GetPath()}");
+            LogTool.ToolError("LocTool",$"Invalid Key:{key}, path:{refTransform.GetPath()}");
             return default;
         }
 
         public static string GetGameStr(string key)
         {
-            if(GameL10n.DataMap.TryGetValue(key, out var l10N))
+            if(GameL10n.DataMap.TryGetValue(key, out var loc))
             {
                 return sLanguage switch
                 {
-                    Language.Chinese => l10N.Cn,
-                    Language.English => l10N.En,
+                    Language.Chinese => loc.Cn,
+                    Language.English => loc.En,
                     _ => default,
                 };
             }
             
-            LogTool.ToolError("L10nTool",$"Invalid Key:{key}");
+            LogTool.ToolError("LocTool",$"Invalid Key:{key}");
             return default;
         }
     }

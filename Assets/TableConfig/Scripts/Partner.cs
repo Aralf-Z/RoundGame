@@ -13,18 +13,21 @@ using SimpleJSON;
 
 namespace cfg
 {
-public sealed partial class Character : Luban.BeanBase
+public sealed partial class Partner : Luban.BeanBase
 {
-    public Character(JSONNode _buf) 
+    public Partner(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
         { if(!_buf["name_loc_key"].IsString) { throw new SerializationException(); }  NameLocKey = _buf["name_loc_key"]; }
-        { if(!_buf["desc_loc_key"].IsString) { throw new SerializationException(); }  DescLocKey = _buf["desc_loc_key"]; }
+        NameLocKey_Ref = null;
+        { if(!_buf["cha_class"].IsNumber) { throw new SerializationException(); }  ChaClass = (ChaClass)_buf["cha_class"].AsInt; }
+        { if(!_buf["core_attri"].IsObject) { throw new SerializationException(); }  CoreAttri = ChaCoreAttributes.DeserializeChaCoreAttributes(_buf["core_attri"]);  }
+        { if(!_buf["res_prefab"].IsString) { throw new SerializationException(); }  ResPrefab = _buf["res_prefab"]; }
     }
 
-    public static Character DeserializeCharacter(JSONNode _buf)
+    public static Partner DeserializePartner(JSONNode _buf)
     {
-        return new Character(_buf);
+        return new Partner(_buf);
     }
 
     /// <summary>
@@ -35,16 +38,21 @@ public sealed partial class Character : Luban.BeanBase
     /// 名称
     /// </summary>
     public readonly string NameLocKey;
+    public LocGame NameLocKey_Ref;
     /// <summary>
-    /// 描述
+    /// 职业
     /// </summary>
-    public readonly string DescLocKey;
+    public readonly ChaClass ChaClass;
+    public readonly ChaCoreAttributes CoreAttri;
+    public readonly string ResPrefab;
    
-    public const int __ID__ = -726803703;
+    public const int __ID__ = 871724200;
     public override int GetTypeId() => __ID__;
 
     public  void ResolveRef(Tables tables)
     {
+        NameLocKey_Ref = tables.TbLocGame.GetOrDefault(NameLocKey);
+        CoreAttri?.ResolveRef(tables);
     }
 
     public override string ToString()
@@ -52,7 +60,9 @@ public sealed partial class Character : Luban.BeanBase
         return "{ "
         + "id:" + Id + ","
         + "nameLocKey:" + NameLocKey + ","
-        + "descLocKey:" + DescLocKey + ","
+        + "chaClass:" + ChaClass + ","
+        + "coreAttri:" + CoreAttri + ","
+        + "resPrefab:" + ResPrefab + ","
         + "}";
     }
 }

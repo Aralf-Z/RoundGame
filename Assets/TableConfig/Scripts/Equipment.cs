@@ -21,7 +21,7 @@ public sealed partial class Equipment : Luban.BeanBase
         { if(!_buf["name"].IsString) { throw new SerializationException(); }  Name = _buf["name"]; }
         { if(!_buf["type"].IsNumber) { throw new SerializationException(); }  Type = (EquipmentType)_buf["type"].AsInt; }
         { if(!_buf["weight"].IsNumber) { throw new SerializationException(); }  Weight = _buf["weight"]; }
-        { if(!_buf["core_attri_addtion"].IsObject) { throw new SerializationException(); }  CoreAttriAddtion = ChaCoreAttributes.DeserializeChaCoreAttributes(_buf["core_attri_addtion"]);  }
+        { if(!_buf["panel_attri_addtion"].IsObject) { throw new SerializationException(); }  PanelAttriAddtion = ChaPanelAttributes.DeserializeChaPanelAttributes(_buf["panel_attri_addtion"]);  }
     }
 
     public static Equipment DeserializeEquipment(JSONNode _buf)
@@ -45,17 +45,14 @@ public sealed partial class Equipment : Luban.BeanBase
     /// 重量
     /// </summary>
     public readonly int Weight;
-    /// <summary>
-    /// 力量
-    /// </summary>
-    public readonly ChaCoreAttributes CoreAttriAddtion;
+    public readonly ChaPanelAttributes PanelAttriAddtion;
    
     public const int __ID__ = -1214642834;
     public override int GetTypeId() => __ID__;
 
     public  void ResolveRef(Tables tables)
     {
-        CoreAttriAddtion?.ResolveRef(tables);
+        PanelAttriAddtion?.ResolveRef(tables);
     }
 
     public override string ToString()
@@ -65,7 +62,7 @@ public sealed partial class Equipment : Luban.BeanBase
         + "name:" + Name + ","
         + "type:" + Type + ","
         + "weight:" + Weight + ","
-        + "coreAttriAddtion:" + CoreAttriAddtion + ","
+        + "panelAttriAddtion:" + PanelAttriAddtion + ","
         + "}";
     }
 }

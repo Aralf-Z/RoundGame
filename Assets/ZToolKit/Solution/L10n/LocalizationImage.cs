@@ -10,7 +10,7 @@ namespace ZToolKit
     {
         protected override void OnLanguageChange()
         {
-           ((Image)target).sprite = ResTool.Load<Sprite>(L10nTool.GetUIStr((RectTransform)transform, key));
+           ((Image)target).sprite = ResTool.Load<Sprite>(LocTool.GetUIStr((RectTransform)transform, key));
         }
     }
 }

@@ -15,20 +15,20 @@ namespace cfg
 public partial class Tables
 {
     public TbAudio TbAudio {get; }
-    public TbL10nUi TbL10nUi {get; }
-    public TbL10nGame TbL10nGame {get; }
+    public TbLocUi TbLocUi {get; }
+    public TbLocGame TbLocGame {get; }
     public TbCyclopedia TbCyclopedia {get; }
-    public TbCharacter TbCharacter {get; }
+    public TbPartner TbPartner {get; }
     public TbBestiary TbBestiary {get; }
     public TbEquipment TbEquipment {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
         TbAudio = new TbAudio(loader("tbaudio"));
-        TbL10nUi = new TbL10nUi(loader("tbl10nui"));
-        TbL10nGame = new TbL10nGame(loader("tbl10ngame"));
+        TbLocUi = new TbLocUi(loader("tblocui"));
+        TbLocGame = new TbLocGame(loader("tblocgame"));
         TbCyclopedia = new TbCyclopedia(loader("tbcyclopedia"));
-        TbCharacter = new TbCharacter(loader("tbcharacter"));
+        TbPartner = new TbPartner(loader("tbpartner"));
         TbBestiary = new TbBestiary(loader("tbbestiary"));
         TbEquipment = new TbEquipment(loader("tbequipment"));
         ResolveRef();
@@ -37,10 +37,10 @@ public partial class Tables
     private void ResolveRef()
     {
         TbAudio.ResolveRef(this);
-        TbL10nUi.ResolveRef(this);
-        TbL10nGame.ResolveRef(this);
+        TbLocUi.ResolveRef(this);
+        TbLocGame.ResolveRef(this);
         TbCyclopedia.ResolveRef(this);
-        TbCharacter.ResolveRef(this);
+        TbPartner.ResolveRef(this);
         TbBestiary.ResolveRef(this);
         TbEquipment.ResolveRef(this);
     }

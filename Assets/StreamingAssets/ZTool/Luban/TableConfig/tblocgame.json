@@ -1,0 +1,87 @@
+[
+  {
+    "l10n_key": "game_title",
+    "cn": "德米斯尔冒险传",
+    "en": "Adventure Of Theardemi"
+  },
+  {
+    "l10n_key": "par_name_1",
+    "cn": "法师学徒",
+    "en": ""
+  },
+  {
+    "l10n_key": "par_name_2",
+    "cn": "教会牧师",
+    "en": ""
+  },
+  {
+    "l10n_key": "par_name_3",
+    "cn": "教会骑士",
+    "en": ""
+  },
+  {
+    "l10n_key": "par_name_4",
+    "cn": "驻军弓箭手",
+    "en": ""
+  },
+  {
+    "l10n_key": "par_name_5",
+    "cn": "铁匠",
+    "en": ""
+  },
+  {
+    "l10n_key": "par_name_6",
+    "cn": "学院导师",
+    "en": ""
+  },
+  {
+    "l10n_key": "par_name_7",
+    "cn": "侠盗",
+    "en": ""
+  },
+  {
+    "l10n_key": "par_name_8",
+    "cn": "女巫",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_1",
+    "cn": "骷髅剑士",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_2",
+    "cn": "骷髅弓箭手",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_3",
+    "cn": "骷髅法师",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_4",
+    "cn": "骷髅巫师",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_5",
+    "cn": "骷髅骑士",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_6",
+    "cn": "黑精灵杀手",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_7",
+    "cn": "黑精灵法师",
+    "en": ""
+  },
+  {
+    "l10n_key": "bes_name_8",
+    "cn": "黑精灵弓箭手",
+    "en": ""
+  }
+]

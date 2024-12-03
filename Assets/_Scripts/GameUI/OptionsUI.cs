@@ -54,7 +54,7 @@ namespace RoundGame.UI
 
         private void LanguageInit()
         {
-            mLanguageTgls = new Toggles(L10nTool.Language switch
+            mLanguageTgls = new Toggles(LocTool.Language switch
             {
                 Language.English => englishTgl,
                 Language.Chinese => chineseTgl,
@@ -65,7 +65,7 @@ namespace RoundGame.UI
             {
                 if (isOn)
                 {
-                    L10nTool.Language = Language.English;
+                    LocTool.Language = Language.English;
                 }
             });
 
@@ -73,7 +73,7 @@ namespace RoundGame.UI
             {
                 if (isOn)
                 {
-                    L10nTool.Language = Language.Chinese;
+                    LocTool.Language = Language.Chinese;
                 }
             });
         }

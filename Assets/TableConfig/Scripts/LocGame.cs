@@ -13,18 +13,18 @@ using SimpleJSON;
 
 namespace cfg
 {
-public sealed partial class L10nGame : Luban.BeanBase
+public sealed partial class LocGame : Luban.BeanBase
 {
-    public L10nGame(JSONNode _buf) 
+    public LocGame(JSONNode _buf) 
     {
         { if(!_buf["l10n_key"].IsString) { throw new SerializationException(); }  L10nKey = _buf["l10n_key"]; }
         { if(!_buf["cn"].IsString) { throw new SerializationException(); }  Cn = _buf["cn"]; }
         { if(!_buf["en"].IsString) { throw new SerializationException(); }  En = _buf["en"]; }
     }
 
-    public static L10nGame DeserializeL10nGame(JSONNode _buf)
+    public static LocGame DeserializeLocGame(JSONNode _buf)
     {
-        return new L10nGame(_buf);
+        return new LocGame(_buf);
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ public sealed partial class L10nGame : Luban.BeanBase
     /// </summary>
     public readonly string En;
    
-    public const int __ID__ = 1325605109;
+    public const int __ID__ = 2002279218;
     public override int GetTypeId() => __ID__;
 
     public  void ResolveRef(Tables tables)
