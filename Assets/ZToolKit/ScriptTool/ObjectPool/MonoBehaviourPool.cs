@@ -72,7 +72,7 @@ namespace ZToolKit
         }
 
         /// <summary>
-        /// 回收使用中的，注意引用中的对象很可能会被回收
+        /// 回收使用中的，注意引用中的对象也会被回收
         /// </summary>
         public void RecycleUsing()
         {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4883757497165733086}
   - component: {fileID: 64132654353106720}
   m_Layer: 0
-  m_Name: Cha_Ezio
+  m_Name: cha_partner_7
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
