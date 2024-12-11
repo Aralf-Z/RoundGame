@@ -1,8 +1,10 @@
 ﻿
 namespace ZToolKit
 {
-    public interface IFactory<T>
+    public interface IFactory<out T>
     {
         T Create();
+        
+        T Create(string name);
     }
 }

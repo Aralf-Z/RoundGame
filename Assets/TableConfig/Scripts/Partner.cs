@@ -20,9 +20,10 @@ public sealed partial class Partner : Luban.BeanBase
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
         { if(!_buf["name_loc_key"].IsString) { throw new SerializationException(); }  NameLocKey = _buf["name_loc_key"]; }
         NameLocKey_Ref = null;
-        { if(!_buf["cha_class"].IsNumber) { throw new SerializationException(); }  ChaClass = (ChaClass)_buf["cha_class"].AsInt; }
+        { if(!_buf["cha_class"].IsNumber) { throw new SerializationException(); }  ChaClass = (ChaClassType)_buf["cha_class"].AsInt; }
+        ChaClass_Ref = null;
         { if(!_buf["core_attri"].IsObject) { throw new SerializationException(); }  CoreAttri = ChaCoreAttributes.DeserializeChaCoreAttributes(_buf["core_attri"]);  }
-        { if(!_buf["res_prefab"].IsString) { throw new SerializationException(); }  ResPrefab = _buf["res_prefab"]; }
+        { if(!_buf["res_prefab"].IsObject) { throw new SerializationException(); }  ResPrefab = ResPack.DeserializeResPack(_buf["res_prefab"]);  }
     }
 
     public static Partner DeserializePartner(JSONNode _buf)
@@ -42,9 +43,10 @@ public sealed partial class Partner : Luban.BeanBase
     /// <summary>
     /// 职业
     /// </summary>
-    public readonly ChaClass ChaClass;
+    public readonly ChaClassType ChaClass;
+    public ChaClass ChaClass_Ref;
     public readonly ChaCoreAttributes CoreAttri;
-    public readonly string ResPrefab;
+    public readonly ResPack ResPrefab;
    
     public const int __ID__ = 871724200;
     public override int GetTypeId() => __ID__;
@@ -52,7 +54,9 @@ public sealed partial class Partner : Luban.BeanBase
     public  void ResolveRef(Tables tables)
     {
         NameLocKey_Ref = tables.TbLocGame.GetOrDefault(NameLocKey);
+        ChaClass_Ref = tables.TbChaClass.GetOrDefault(ChaClass);
         CoreAttri?.ResolveRef(tables);
+        ResPrefab?.ResolveRef(tables);
     }
 
     public override string ToString()

@@ -21,6 +21,7 @@ public partial class Tables
     public TbPartner TbPartner {get; }
     public TbBestiary TbBestiary {get; }
     public TbEquipment TbEquipment {get; }
+    public TbChaClass TbChaClass {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
@@ -31,6 +32,7 @@ public partial class Tables
         TbPartner = new TbPartner(loader("tbpartner"));
         TbBestiary = new TbBestiary(loader("tbbestiary"));
         TbEquipment = new TbEquipment(loader("tbequipment"));
+        TbChaClass = new TbChaClass(loader("tbchaclass"));
         ResolveRef();
     }
     
@@ -43,6 +45,7 @@ public partial class Tables
         TbPartner.ResolveRef(this);
         TbBestiary.ResolveRef(this);
         TbEquipment.ResolveRef(this);
+        TbChaClass.ResolveRef(this);
     }
 }
 

@@ -7,44 +7,49 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using Luban;
+using SimpleJSON;
 
 
 namespace cfg
-{ 
-    /// <summary>
-    /// 角色职业
-    /// </summary>
-    public enum ChaClass
+{
+public sealed partial class ChaClass : Luban.BeanBase
+{
+    public ChaClass(JSONNode _buf) 
     {
-        /// <summary>
-        /// 战士
-        /// </summary>
-        Warrior = 1,
-        /// <summary>
-        /// 圣骑士
-        /// </summary>
-        Paladin = 2,
-        /// <summary>
-        /// 牧师
-        /// </summary>
-        Cleric = 3,
-        /// <summary>
-        /// 法师
-        /// </summary>
-        Wizard = 4,
-        /// <summary>
-        /// 猎人
-        /// </summary>
-        Hunter = 5,
-        /// <summary>
-        /// 游荡者
-        /// </summary>
-        Rogue = 6,
-        /// <summary>
-        /// 巫师
-        /// </summary>
-        Sorcerer = 7,
+        { if(!_buf["class_type"].IsNumber) { throw new SerializationException(); }  ClassType = (ChaClassType)_buf["class_type"].AsInt; }
+        { if(!_buf["formation"].IsNumber) { throw new SerializationException(); }  Formation = (ChaFormation)_buf["formation"].AsInt; }
     }
 
-} 
+    public static ChaClass DeserializeChaClass(JSONNode _buf)
+    {
+        return new ChaClass(_buf);
+    }
+
+    /// <summary>
+    /// 唯一id
+    /// </summary>
+    public readonly ChaClassType ClassType;
+    /// <summary>
+    /// 站位类型
+    /// </summary>
+    public readonly ChaFormation Formation;
+   
+    public const int __ID__ = 1457495644;
+    public override int GetTypeId() => __ID__;
+
+    public  void ResolveRef(Tables tables)
+    {
+    }
+
+    public override string ToString()
+    {
+        return "{ "
+        + "classType:" + ClassType + ","
+        + "formation:" + Formation + ","
+        + "}";
+    }
+}
+
+}
 

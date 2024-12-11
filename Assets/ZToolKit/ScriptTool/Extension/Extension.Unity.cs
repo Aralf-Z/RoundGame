@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 
 namespace ZToolKit
 {
-    public static class Extension
+    public static partial class Extension
     {
         /// <summary>
         /// 判断指针合法-左键或者单指
